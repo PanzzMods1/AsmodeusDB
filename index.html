@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment PanzzA7X 💳</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg,#dff3ff,#f7f9fc,#dce4ec);
+      color:#1f2937;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#7dd3fc;
+      border-radius:50%;
+      filter:blur(140px);
+      top:-150px;
+      left:-120px;
+      opacity:0.5;
+      z-index:-1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:450px;
+      height:450px;
+      background:#94a3b8;
+      border-radius:50%;
+      filter:blur(140px);
+      bottom:-180px;
+      right:-100px;
+      opacity:0.3;
+      z-index:-1;
+      animation: float2 10s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(25px);}
+      100%{transform:translateY(0px);}
+    }
+
+    @keyframes float2{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-20px);}
+      100%{transform:translateY(0px);}
+    }
+
+    .container{
+      width:100%;
+      max-width:1150px;
+      margin:auto;
+      padding:30px 20px;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
+      animation: fadeDown 1s ease;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:55px;
+      height:55px;
+      border-radius:16px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .logo h1{
+      font-size:22px;
+      color:#0f172a;
+    }
+
+    .nav-btn{
+      background:#38bdf8;
+      color:white;
+      padding:10px 22px;
+      border:none;
+      border-radius:14px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(56,189,248,0.3);
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-3px);
+      background:#0ea5e9;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+      align-items:center;
+    }
+
+    .left{
+      animation: fadeLeft 1s ease;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.6);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.5);
+      color:#0284c7;
+      font-size:13px;
+      margin-bottom:18px;
+      font-weight:600;
+    }
+
+    .left h2{
+      font-size:52px;
+      line-height:1.1;
+      margin-bottom:18px;
+      color:#0f172a;
+    }
+
+    .left p{
+      color:#475569;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      text-decoration:none;
+      padding:14px 24px;
+      border-radius:16px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .primary{
+      background:#38bdf8;
+      color:white;
+      box-shadow:0 10px 25px rgba(56,189,248,0.3);
+    }
+
+    .primary:hover{
+      transform:translateY(-3px);
+      background:#0ea5e9;
+    }
+
+    .secondary{
+      background:white;
+      color:#334155;
+      border:1px solid #dbeafe;
+    }
+
+    .secondary:hover{
+      transform:translateY(-3px);
+    }
+
+    .card{
+      background:rgba(255,255,255,0.55);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,0.4);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.08);
+      animation: fadeRight 1s ease;
+    }
+
+    .payment-title{
+      font-size:24px;
+      margin-bottom:20px;
+      color:#0f172a;
+    }
+
+    .qris{
+      width:100%;
+      border-radius:22px;
+      margin-bottom:22px;
+      border:4px solid rgba(255,255,255,0.5);
+      transition:0.3s;
+    }
+
+    .qris:hover{
+      transform:scale(1.02);
+    }
+
+    .pay-box{
+      background:white;
+      padding:15px 18px;
+      border-radius:18px;
+      margin-bottom:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 5px 18px rgba(0,0,0,0.05);
+      gap:15px;
+    }
+
+    .pay-box span{
+      color:#64748b;
+      font-size:14px;
+    }
+
+    .pay-box h3{
+      font-size:16px;
+      color:#0f172a;
+      margin-top:4px;
+    }
+
+    .copy-btn{
+      border:none;
+      background:#38bdf8;
+      color:white;
+      padding:10px 16px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
+      transition:.3s;
+      min-width:90px;
+    }
+
+    .copy-btn:hover{
+      background:#0ea5e9;
+      transform:scale(1.05);
+    }
+
+    .contact{
+      margin-top:20px;
+    }
+
+    .contact a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:#0f172a;
+      background:white;
+      padding:14px 18px;
+      border-radius:18px;
+      margin-bottom:12px;
+      transition:0.3s;
+      box-shadow:0 5px 18px rgba(0,0,0,0.05);
+    }
+
+    .contact a:hover{
+      transform:translateX(6px);
+      background:#e0f2fe;
+    }
+
+    .footer{
+      margin-top:60px;
+      text-align:center;
+      color:#64748b;
+      font-size:14px;
+      animation: fadeUp 1s ease;
+    }
+
+    .notif{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      background:#38bdf8;
+      color:white;
+      padding:12px 20px;
+      border-radius:14px;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      animation:fadeNotif .3s ease;
+      z-index:9999;
+    }
+
+    @keyframes fadeNotif{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes fadeDown{
+      from{
+        opacity:0;
+        transform:translateY(-30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes fadeLeft{
+      from{
+        opacity:0;
+        transform:translateX(-40px);
+      }
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes fadeRight{
+      from{
+        opacity:0;
+        transform:translateX(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+      .left h2{
+        font-size:38px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .pay-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .copy-btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://files.catbox.moe/fg1yvl.png" alt="Logo">
+        <h1>PanzzA7X Payment</h1>
+      </div>
+
+      <button class="nav-btn">Secure Payment</button>
+    </div>
+
+    <div class="hero">
+
+      <div class="left">
+        <div class="badge">💎 - Dashboard</div>
+
+        <h2>Dashboard Payment PanzzA7X</h2>
+
+        <p>
+          Haii Semuanya! Perkenalkan Saya PanzzA7X Hanya Sebatas Progammer Biasa
+          Tidak Terkenal, Tidak Famous Seperti Yang Lainnya. Untuk Melakukan Pembayaran
+          Bisa Langsung Saja Scan Qris Dibawah Atau Salin Nomor Pembayarannya. 💸
+        </p>
+
+        <div class="btn-group">
+          <a href="#payment" class="btn primary">Lihat Pembayaran</a>
+          <a href="https://t.me/thispanzzx" class="btn secondary">Contact Admin</a>
+        </div>
+      </div>
+
+      <div class="card" id="payment">
+
+        <h2 class="payment-title">Metode Pembayaran</h2>
+
+        <!-- FOTO QRIS -->
+        <img 
+          src="https://files.catbox.moe/8807xq.jpg"
+          class="qris"
+          alt="QRIS"
+        >
+
+        <!-- DANA -->
+        <div class="pay-box">
+          <div>
+            <span>Dana</span>
+            <h3>0813-1845-9140</h3>
+          </div>
+
+          <button 
+            class="copy-btn"
+            onclick="copyText('081318459140')"
+          >
+            Salin
+          </button>
+        </div>
+
+        <!-- GOPAY -->
+        <div class="pay-box">
+          <div>
+            <span>Gopay</span>
+            <h3>0813-7386-6081</h3>
+          </div>
+
+          <button 
+            class="copy-btn"
+            onclick="copyText('081373866081')"
+          >
+            Salin
+          </button>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact">
+
+          <a href="https://t.me/thispanzzx" target="_blank">
+            📩 Telegram Admin
+          </a>
+
+          <a href="https://wa.me/6281373866081" target="_blank">
+            📞 WhatsApp Admin
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+      © 2026 PanzzA7X Payment — Dashboard
+    </div>
+
+  </div>
+
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+
+      const notif = document.createElement("div");
+      notif.className = "notif";
+      notif.innerText = "Berhasil disalin!";
+
+      document.body.appendChild(notif);
+
+      setTimeout(() => {
+        notif.remove();
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
